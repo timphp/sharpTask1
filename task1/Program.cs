@@ -13,10 +13,12 @@ namespace task1
             foreach (int el in arr) Console.Write(el + " ");
             Console.Write("\n");
         }
-
-        private static void Sort(ref int[] arr, int left = 0, int right = -1)
+        private static void Sort(ref int[] arr)
         {
-            if (right == -1) right = arr.Length - 1;
+            Sort(ref arr, 0, arr.Length - 1);
+        }
+        private static void Sort(ref int[] arr, int left, int right)
+        {
             if (left < right)
             {
                 int p = Partition(ref arr, left, right);
